@@ -1,0 +1,131 @@
+/* ==========================================
+   Global Resets & Base Styles
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #0f172a;
+}
+
+h2 {
+    margin: 50px 0 20px;
+    color: #1e3a8a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+/* ==========================================
+   Exercise 1: Photo Gallery
+   ========================================== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   Exercise 2: Magazine Layout
+   ========================================== */
+.magazine {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 20px;
+}
+
+.header {
+    grid-column: 1 / -1;
+    background-color: #1e3a8a;
+    color: white;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.sidebar {
+    background-color: #3b82f6;
+    color: white;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.main-content {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+}
+
+.footer {
+    grid-column: 1 / -1;
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* ==========================================
+   Exercise 3: Project Cards Grid
+   ========================================== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+@media (max-width: 1024px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    .magazine {
+        grid-template-columns: 1fr;
+    }
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
